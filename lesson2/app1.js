@@ -1,9 +1,10 @@
 const express = require ('express')
+const { send } = require('process')
 const app = express()
 
 app.get('/',(req,res)=>{
-    res.setHeader('Content-Type','text/html');
-    res.end('<h1>Home page</h1>')
+    console.log(__dirname)
+    res.sendFile(__dirname + "/view/home.html")
 })
 app.get('/about', (req,res)=>{
     res.setHeader('Content-Type','text/html');
